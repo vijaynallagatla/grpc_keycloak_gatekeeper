@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: audit-logging
+  labels:
+    app: audit-logging
+spec:
+  selector:
+    app: audit-logging
+  ports:
+  - port: 8080
+    protocol: TCP
+    nodePort: 30031
+  type: LoadBalancer

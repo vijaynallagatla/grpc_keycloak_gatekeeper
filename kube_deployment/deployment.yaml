@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: audit-logging
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: audit-logging
+    spec:
+      containers:
+      - name: audit-logging
+        image: auditlog:1.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
